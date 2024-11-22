@@ -15,11 +15,13 @@ export const useAuthStore = create((set, get) => ({
   socket: null,
 
   checkAuth: async () => {
+    console.log("t 4");
     try {
       const res = await axiosInstance.get("/auth/check");
      console.log("check auth running")
       set({ authUser: res.data });
       get().connectSocket();
+      console.log("t 5");
     // eslint-disable-next-line no-unused-vars
     } catch (error) {
       console.log("Error in checkAuth");
@@ -30,12 +32,14 @@ export const useAuthStore = create((set, get) => ({
   },
 
   signup: async (data) => {
+    console.log("t 6");
     set({ isSigningUp: true });
     try {
       const res = await axiosInstance.post("/auth/signup", data);
       set({ authUser: res.data });
       toast.success("Account created successfully");
       get().connectSocket();
+      console.log("t 7");
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -44,6 +48,7 @@ export const useAuthStore = create((set, get) => ({
   },
 
   login: async (data) => {
+    console.log("t 8");
     set({ isLoggingIn: true });
     try {
       const res = await axiosInstance.post("/auth/login", data);
@@ -51,6 +56,7 @@ export const useAuthStore = create((set, get) => ({
       toast.success("Logged in successfully");
 
       get().connectSocket();
+      console.log("t 9");
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -84,6 +90,7 @@ export const useAuthStore = create((set, get) => ({
   },
 
   connectSocket: () => {
+    console.log("s1");
     const { authUser } = get();
     if (!authUser || get().socket?.connected) return;
 
@@ -99,6 +106,7 @@ export const useAuthStore = create((set, get) => ({
     socket.on("getOnlineUsers", (userIds) => {
       set({ onlineUsers: userIds });
     });
+    console.log("s2");
   },
   disconnectSocket: () => {
     if (get().socket?.connected) get().socket.disconnect();

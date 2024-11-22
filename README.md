@@ -1,6 +1,6 @@
 # Real-Time Chat Application
 
-![Real-Time Chat Application Screenshot](https://onlinechats.shop/screenshot.jpg)
+![Real-Time Chat Application Screenshot](./frontend/public/screenshot.png)
 
 Welcome to the **Real-Time Chat Application**! This is a feature-rich chat application built with the MERN stack, designed for seamless real-time communication. The app is deployed on a VPS with Nginx and PM2, ensuring high availability and performance.
 

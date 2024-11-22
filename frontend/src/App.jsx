@@ -20,6 +20,7 @@ const App = () => {
   const { theme } = useThemeStore();
 
   console.log("VITE_API_URL: ", import.meta.env.VITE_API_URL);
+  console.log("VITE_socket_URL: ", import.meta.env.VITE_SOCKET_URL)
   // console.log({ onlineUsers });
 
   useEffect(() => {

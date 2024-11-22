@@ -19,7 +19,6 @@ const SettingsPage = () => {
         </div>
 
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
-        {console.log("settingPage: test 1")}
           {THEMES.map((t) => (
             <button
               key={t}
@@ -42,7 +41,6 @@ const SettingsPage = () => {
               </span>
             </button>
           ))}
-          {console.log("settingPage: test 2")}
         </div>
 
         {/* Preview Section */}
@@ -67,7 +65,6 @@ const SettingsPage = () => {
 
                 {/* Chat Messages */}
                 <div className="p-4 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100">
-                {console.log("settingPage previewMsg: test 1")}
                   {PREVIEW_MESSAGES.map((message) => (
                     <div
                       key={message.id}
@@ -91,7 +88,6 @@ const SettingsPage = () => {
                       </div>
                     </div>
                   ))}
-                  {console.log("settingPage previewMsg: test 2")}
                 </div>
 
                 {/* Chat Input */}

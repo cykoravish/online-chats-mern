@@ -11,13 +11,10 @@ export const useChatStore = create((set, get) => ({
   isMessagesLoading: false,
 
   getUsers: async () => {
-    console.log("u1");
     set({ isUsersLoading: true });
     try {
       const res = await axiosInstance.get("/messages/users");
-      console.log("/api/messages/users: ", res);
       set({ users: res.data });
-      console.log("u2");
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -26,12 +23,10 @@ export const useChatStore = create((set, get) => ({
   },
 
   getMessages: async (userId) => {
-    console.log("u3");
     set({ isMessagesLoading: true });
     try {
       const res = await axiosInstance.get(`/messages/${userId}`);
       set({ messages: res.data });
-      console.log("u4");
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -39,7 +34,6 @@ export const useChatStore = create((set, get) => ({
     }
   },
   sendMessage: async (messageData) => {
-    console.log("u5");
     const { selectedUser, messages } = get();
     try {
       const res = await axiosInstance.post(
@@ -47,7 +41,6 @@ export const useChatStore = create((set, get) => ({
         messageData
       );
       set({ messages: [...messages, res.data] });
-      console.log("u6");
     } catch (error) {
       toast.error(error.response.data.message);
     }

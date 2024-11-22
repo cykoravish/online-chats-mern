@@ -19,21 +19,16 @@ const App = () => {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
   const { theme } = useThemeStore();
 
-  console.log("t 1");
-
-
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
-  console.log("t 2");
   if (isCheckingAuth && !authUser)
     return (
       <div className="flex items-center justify-center h-screen">
         <Loader className="size-10 animate-spin" />
       </div>
     );
-    console.log("t 3");
   return (
     <div data-theme={theme}>
       <Navbar />

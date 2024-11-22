@@ -10,7 +10,6 @@ const Sidebar = () => {
 
   const { onlineUsers } = useAuthStore();
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
-  console.log("online:", showOnlineOnly);
   useEffect(() => {
     getUsers();
   }, [getUsers]);
@@ -46,8 +45,6 @@ const Sidebar = () => {
       </div>
 
       <div className="overflow-y-auto w-full py-3">
-        {console.log("sidebar: test 1 ==>")}
-        {console.log("filteredUsers: ==>", filteredUsers)}
         {filteredUsers?.map((user) => (
           <button
             key={user._id}
@@ -85,12 +82,9 @@ const Sidebar = () => {
             </div>
           </button>
         ))}
-        {console.log("sidebar: test 2")}
         {filteredUsers.length === 0 && (
           <div className="text-center text-zinc-500 py-4">No online users</div>
         )}
-        {console.log("filteredUsers: ==>", filteredUsers)}
-        {console.log("filteredUsers.length: ==>", filteredUsers.length)}
       </div>
     </aside>
   );

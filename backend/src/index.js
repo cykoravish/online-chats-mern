@@ -34,7 +34,7 @@ app.use("/api/messages", messageRoutes);
 //     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
 //   });
 // }
-
+console.log("frontend_url:", process.env.FRONTEND_URL);
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();

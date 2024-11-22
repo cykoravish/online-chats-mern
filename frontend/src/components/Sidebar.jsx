@@ -48,7 +48,7 @@ const Sidebar = () => {
       <div className="overflow-y-auto w-full py-3">
         {console.log("sidebar: test 1 ==>")}
         {console.log("filteredUsers: ==>", filteredUsers)}
-        {filteredUsers.map((user) => (
+        {filteredUsers?.map((user) => (
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}

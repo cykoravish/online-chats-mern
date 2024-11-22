@@ -19,15 +19,13 @@ const App = () => {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
   const { theme } = useThemeStore();
 
-  console.log("VITE_API_URL: ", import.meta.env.VITE_API_URL);
-  console.log("VITE_socket_URL: ", import.meta.env.VITE_SOCKET_URL)
-  // console.log({ onlineUsers });
+  console.log("test 1");
+
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
-  // console.log({ authUser });
 
   if (isCheckingAuth && !authUser)
     return (

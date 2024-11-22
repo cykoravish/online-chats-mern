@@ -43,6 +43,7 @@ const Sidebar = () => {
       </div>
 
       <div className="overflow-y-auto w-full py-3">
+      {console.log("sidebar: test 1")}
         {filteredUsers.map((user) => (
           <button
             key={user._id}
@@ -76,7 +77,7 @@ const Sidebar = () => {
             </div>
           </button>
         ))}
-
+        {console.log("sidebar: test 2")}
         {filteredUsers.length === 0 && (
           <div className="text-center text-zinc-500 py-4">No online users</div>
         )}

@@ -17,11 +17,12 @@ export const useAuthStore = create((set, get) => ({
   checkAuth: async () => {
     try {
       const res = await axiosInstance.get("/auth/check");
-
+     console.log("check auth running")
       set({ authUser: res.data });
       get().connectSocket();
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      console.log("Error in checkAuth:", error);
+      console.log("Error in checkAuth");
       set({ authUser: null });
     } finally {
       set({ isCheckingAuth: false });

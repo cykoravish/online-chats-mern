@@ -48,6 +48,7 @@ const ChatContainer = () => {
       <ChatHeader />
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      {console.log("chatContainer: test 1")}
         {messages.map((message) => (
           <div
             key={message._id}
@@ -84,7 +85,7 @@ const ChatContainer = () => {
           </div>
         ))}
       </div>
-
+      {console.log("chatContainer: test 2")}
       <MessageInput />
     </div>
   );
